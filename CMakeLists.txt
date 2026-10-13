@@ -3,5 +3,6 @@ project(raytracer_test)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(raytracer_test main.cpp
-        CApp.h)
+add_executable(raytracer_test
+        CApp.h
+        CApp.cpp)
