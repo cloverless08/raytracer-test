@@ -7,11 +7,11 @@
 constexpr int WIDTH = 480;
 constexpr int HEIGHT = 640;
 
-// definte default constructor
+// define default constructor
 CApp::CApp() {
     running = true;
-    pWindow = NULL;
-    pRenderer = NULL;
+    pWindow = nullptr;
+    pRenderer = nullptr;
 }
 
 bool CApp::OnInit() {
@@ -28,7 +28,14 @@ bool CApp::OnInit() {
         SDL_WINDOW_SHOWN
         );
 
-    if (pWindow != NULL) {
+    if (pWindow != nullptr) {
         pRenderer = SDL_CreateRenderer(pWindow, -1, 0);
+    } else {
+        return false;
     }
+    return true;
+}
+
+int CApp::OnExecute() {
+
 }
