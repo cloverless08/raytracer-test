@@ -37,5 +37,19 @@ bool CApp::OnInit() {
 }
 
 int CApp::OnExecute() {
+    SDL_Event event;
 
+    if (OnInit() == false) {
+        return -1;
+    }
+
+    while (running) {
+        while (SDL_PollEvent(&event) != 0) {
+            OnEvent(&event);
+        }
+
+        OnLoop();
+        OnRender();
+
+    }
 }
