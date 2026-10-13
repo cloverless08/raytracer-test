@@ -7,10 +7,19 @@
 #include "SDL2/SDL.h"
 
 class CApp {
-    public:
+public:
     CApp();
 
     int OnExecute();
     bool OnInit();
     void OnEvent(SDL_Event *event);
+    void OnLoop();
+    void OnRender();
+    void OnExit();
+
+private:
+    // SDL2 stuff basically
+    bool running;
+    SDL_Window *pWindow;
+    SDL_Renderer *pRenderer;
 };
