@@ -28,7 +28,7 @@ bool CApp::OnInit() {
         SDL_WINDOW_SHOWN
         );
 
-    if (pWindow != false) {
+    if (pWindow != NULL) {
         pRenderer = SDL_CreateRenderer(pWindow, -1, 0);
     }
 }
