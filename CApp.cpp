@@ -66,5 +66,17 @@ void CApp::OnLoop() {
 
 void CApp::OnRender() {
  // set background to white
-    SDL_SetRenderDrawColor(pRenderer, 255, 255, 255, 255);
+    SDL_SetRenderDrawColor(pRenderer, 255, 255, 255, 255); // white is a stupid color tbh
+    SDL_RenderClear(pRenderer);
+
+    SDL_RenderPresent(pRenderer);
+}
+
+void CApp::OnExit() {
+    //sdl2 cleanup
+    SDL_DestroyRenderer(pRenderer);
+    SDL_DestroyWindow(pWindow);
+    pWindow = nullptr;
+
+    SDL_Quit();
 }
