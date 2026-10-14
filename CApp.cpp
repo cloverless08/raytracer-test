@@ -20,7 +20,7 @@ bool CApp::OnInit() {
     }
 
     pWindow = SDL_CreateWindow(
-        "Ray Tracing Test",
+        "ray freaking tracing freaking test",
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
         640,
