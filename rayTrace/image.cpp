@@ -39,3 +39,14 @@ void Image::SetPixel(const int x, const int y, const double red, const double gr
     m_gChannel.at(x).at(y) = green;
     m_bChannel.at(x).at(y) = blue;
 }
+
+void Image::Display() {   // pixel buffer goes here actually (PIXEL BUFFER MENTIONED)
+
+    // allocate inital memory
+    Uint32 *tempPixels = new Uint32[m_sizeX * m_sizeY];
+
+    // clear buffer
+    memset(tempPixels, 0, m_sizeX * m_sizeY * sizeof(Uint32));
+
+
+}

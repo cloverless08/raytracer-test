@@ -33,7 +33,7 @@ private:
 // private variables
 private:
 
-    // image buffer mentioned (different implementation)
+    // not a typical pixel buffer, just color channels for the pixels
     std::vector<std::vector<double>> m_rChannel;
     std::vector<std::vector<double>> m_gChannel;
     std::vector<std::vector<double>> m_bChannel;
