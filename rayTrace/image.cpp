@@ -40,7 +40,7 @@ void Image::SetPixel(const int x, const int y, const double red, const double gr
     m_bChannel.at(x).at(y) = blue;
 }
 
-void Image::Display() {   // pixel buffer goes here actually (PIXEL BUFFER MENTIONED)
+void Image::Display(const int HEIGHT, const int WIDTH) {   // pixel buffer goes here actually (PIXEL BUFFER MENTIONED)
 
     // allocate inital memory
     Uint32 *tempPixels = new Uint32[m_sizeX * m_sizeY];
@@ -48,5 +48,26 @@ void Image::Display() {   // pixel buffer goes here actually (PIXEL BUFFER MENTI
     // clear buffer
     memset(tempPixels, 0, m_sizeX * m_sizeY * sizeof(Uint32));
 
+    // populate pixel buffer with color data
+    for (int x = 0; x < m_sizeX; ++x) { // inefficient
+        for (int y = 0; y < m_sizeY; ++y) {
+            tempPixels[(y*m_sizeX)] = ConvertColor(m_rChannel.at(x).at(y), m_gChannel.at(x).at(y), m_bChannel.at(x).at(y));
+        }
+    }
 
+    // update texture from pixel buffer
+    SDL_UpdateTexture(m_pTexture, nullptr, tempPixels, m_sizeX * sizeof(Uint32));
+
+    delete[] tempPixels; // have to use C-style allocation because of SDL2
+
+
+    // copy texture to renderer
+    SDL_Rect srcRect, bounds;
+    srcRect.x = 0;
+    srcRect.y = 0;
+    srcRect.w = WIDTH; // could also be m_sizeX
+    srcRect.h = HEIGHT; // could also be m_sizeY
+
+    bounds = srcRect;
+    SDL_RenderCopy(m_pRenderer, m_pTexture, &srcRect, &bounds);
 }
