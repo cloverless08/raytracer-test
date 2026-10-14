@@ -25,5 +25,17 @@ void Image::Init(const int sizeX, const int sizeY, SDL_Renderer *pRenderer) {
     m_gChannel.resize(sizeX, std::vector<double>(sizeY, 0.0));
     m_bChannel.resize(sizeX, std::vector<double>(sizeY, 0.0));
 
+    m_sizeX = sizeX;
+    m_sizeY = sizeY;
 
+    // store the pointer to the renderer
+    m_pRenderer = pRenderer;
+
+    InitTexture();
+}
+
+void Image::SetPixel(const int x, const int y, const double red, const double green, const double blue) {
+    m_rChannel.at(x).at(y) = red;
+    m_gChannel.at(x).at(y) = green;
+    m_bChannel.at(x).at(y) = blue;
 }
