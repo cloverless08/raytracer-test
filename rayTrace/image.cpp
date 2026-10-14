@@ -17,3 +17,13 @@ Image::~Image() {
         SDL_DestroyTexture(m_pTexture);
     }
 }
+
+// init function
+void Image::Init(const int sizeX, const int sizeY, SDL_Renderer *pRenderer) {
+    // resize image arrays
+    m_rChannel.resize(sizeX, std::vector<double>(sizeY, 0.0));
+    m_gChannel.resize(sizeX, std::vector<double>(sizeY, 0.0));
+    m_bChannel.resize(sizeX, std::vector<double>(sizeY, 0.0));
+
+
+}
