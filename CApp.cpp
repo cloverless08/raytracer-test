@@ -59,3 +59,12 @@ void CApp::OnEvent(SDL_Event *event) {
         running = false;
     }
 }
+
+void CApp::OnLoop() {
+
+}
+
+void CApp::OnRender() {
+ // set background to white
+    SDL_SetRenderDrawColor(pRenderer, 255, 255, 255, 255);
+}
