@@ -1,3 +1,0 @@
-/home/cdemin/Code/Research/raytracer-test/build/CMakeFiles/raytracer_test.dir
-/home/cdemin/Code/Research/raytracer-test/build/CMakeFiles/edit_cache.dir
-/home/cdemin/Code/Research/raytracer-test/build/CMakeFiles/rebuild_cache.dir

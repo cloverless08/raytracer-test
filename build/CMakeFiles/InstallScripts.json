@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/cdemin/Code/Research/raytracer-test/build/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
