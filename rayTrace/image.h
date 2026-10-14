@@ -24,14 +24,12 @@ public:
     // handles displaying image
     void Display(const int HEIGHT, const int WIDTH);
 
-// private functions
-private:
-
     Uint32 ConvertColor(const double red, const double green, const double blue); // wait omg this is how im doing it in the sim :0
-    void InitTexture();
 
-// private variables
+
 private:
+
+    void InitTexture();
 
     // not a typical pixel buffer, just color channels for the pixels
     std::vector<std::vector<double>> m_rChannel;

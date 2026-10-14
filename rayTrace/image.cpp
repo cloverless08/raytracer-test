@@ -71,3 +71,7 @@ void Image::Display(const int HEIGHT, const int WIDTH) {   // pixel buffer goes 
     bounds = srcRect;
     SDL_RenderCopy(m_pRenderer, m_pTexture, &srcRect, &bounds);
 }
+
+void Image::InitTexture() {
+
+}
