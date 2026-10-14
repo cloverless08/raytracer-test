@@ -4,6 +4,7 @@
 
 #include "CApp.h"
 
+
 constexpr int HEIGHT = 480;
 constexpr int WIDTH = 640;
 
@@ -52,6 +53,8 @@ int CApp::OnExecute() {
         OnRender();
 
     }
+
+    return 0;
 }
 
 void CApp::OnEvent(SDL_Event *event) {
