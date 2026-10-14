@@ -3,7 +3,7 @@
 //
 
 #include "CApp.h"
-
+#include "SDL2/SDL.h"
 
 constexpr int HEIGHT = 480;
 constexpr int WIDTH = 640;
