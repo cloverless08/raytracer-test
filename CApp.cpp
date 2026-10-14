@@ -4,8 +4,8 @@
 
 #include "CApp.h"
 
-constexpr int WIDTH = 480;
-constexpr int HEIGHT = 640;
+constexpr int HEIGHT = 480;
+constexpr int WIDTH = 640;
 
 // define default constructor
 CApp::CApp() {
