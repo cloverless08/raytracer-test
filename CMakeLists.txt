@@ -7,6 +7,7 @@ find_package(SDL2 REQUIRED CONFIG)
 add_executable(raytracer_test
         CApp.h
         CApp.cpp
-        main.cpp)
+        main.cpp
+        rayTrace/image.h)
 
 target_link_libraries(raytracer_test PRIVATE SDL2::SDL2 SDL2::SDL2main)
