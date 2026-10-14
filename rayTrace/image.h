@@ -33,4 +33,16 @@ private:
 // private variables
 private:
 
+    // image buffer mentioned (different implementation)
+    std::vector<std::vector<double>> m_rChannel;
+    std::vector<std::vector<double>> m_gChannel;
+    std::vector<std::vector<double>> m_bChannel;
+
+    // image resolution
+    int m_sizeX;
+    int m_sizeY;
+
+
+    SDL_Renderer *m_pRenderer;
+    SDL_Texture *m_pTexture;
 };
