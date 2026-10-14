@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(raytracer_test
         CApp.h
-        CApp.cpp)
+        CApp.cpp
+        main.cpp)
