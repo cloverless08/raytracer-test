@@ -12,7 +12,7 @@ class Image {
     // default constructor
     Image();
 
-    // default destrucor
+    // default destructor
     ~Image();
 
     void Init(const int sizeX, const int sizeY, SDL_Renderer *pRenderer);
