@@ -91,4 +91,15 @@ void Image::InitTexture() {
         amask = 0xff000000;
     #endif
 
+    // delete previous texture (if any)
+    if (m_pTexture != nullptr) {
+        SDL_DestroyTexture(m_pTexture);
+    }
+
+    // create working texture to store image
+    SDL_Surface *tmpSurface = SDL_CreateRGBSurface(0 , m_sizeX, m_sizeY, 32 , rmask, gmask, bmask, amask);
+    m_pTexture = SDL_CreateTextureFromSurface(m_pRenderer, tmpSurface);
+    SDL_FreeSurface(tmpSurface);
+
 }
+
