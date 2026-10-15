@@ -30,7 +30,18 @@ bool CApp::OnInit() {
         );
 
     if (pWindow != nullptr) {
-        pRenderer = SDL_CreateRenderer(pWindow, -1, 0);
+        pRenderer = SDL_CreateRenderer(pWindow, -1, 0); // initalize renderer
+        m_image.Init(WIDTH, HEIGHT, pRenderer); // initalize image instance
+
+        // create some color variation for fun
+        for (int x = 0; x < WIDTH; ++x) {
+            for (int y = 0; y < HEIGHT; ++y) {
+                double red = (static_cast<double>(x) / WIDTH) * 255;
+                double green = (static_cast<double>(y) / HEIGHT) * 255;
+                m_image.SetPixel(x, y, red, green, 0.0);
+            }
+        }
+
     } else {
         return false;
     }

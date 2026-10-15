@@ -5,6 +5,7 @@
 #pragma once
 
 #include "SDL2/SDL.h"
+#include "./rayTrace/image.h"
 
 class CApp {
 public:
@@ -18,6 +19,9 @@ public:
     void OnExit();
 
 private:
+    // declare in instance of the Image class
+    Image m_image;
+
     // SDL2 stuff basically
     bool running;
     SDL_Window *pWindow;
