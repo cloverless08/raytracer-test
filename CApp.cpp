@@ -83,6 +83,9 @@ void CApp::OnRender() {
     SDL_SetRenderDrawColor(pRenderer, 255, 255, 255, 255); // white is a stupid color tbh
     SDL_RenderClear(pRenderer);
 
+    // display the image
+    m_image.Display(WIDTH, HEIGHT);
+
     SDL_RenderPresent(pRenderer);
 }
 
