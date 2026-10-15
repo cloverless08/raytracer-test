@@ -103,3 +103,18 @@ void Image::InitTexture() {
 
 }
 
+Uint32 ConvertColor(const double red, const double green, const double blue) {
+    // conver to unsigned integers
+    unsigned char r = static_cast<unsigned char>(red);
+    unsigned char g = static_cast<unsigned char>(green);
+    unsigned char b = static_cast<unsigned char>(blue);
+
+#if SDL_BYTEORDER == SDL_BIG_ENDIAN
+    Uint32 pixelColor = (r << 24) + (g << 16) + (b << 8) + 255;
+#else
+    Uint32 pixelColor = (255 << 24) + (r << 16) + (g << 8) + b;
+#endif
+
+    return pixelColor;
+
+}
