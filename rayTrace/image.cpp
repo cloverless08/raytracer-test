@@ -51,7 +51,7 @@ void Image::Display(const int HEIGHT, const int WIDTH) {   // pixel buffer goes 
     // populate pixel buffer with color data
     for (int x = 0; x < m_sizeX; ++x) { // inefficient
         for (int y = 0; y < m_sizeY; ++y) {
-            tempPixels[(y*m_sizeX)] = ConvertColor(m_rChannel.at(x).at(y), m_gChannel.at(x).at(y), m_bChannel.at(x).at(y));
+            tempPixels[(y*m_sizeX) + x] = ConvertColor(m_rChannel.at(x).at(y), m_gChannel.at(x).at(y), m_bChannel.at(x).at(y));
         }
     }
 
@@ -103,7 +103,7 @@ void Image::InitTexture() {
 
 }
 
-Uint32 ConvertColor(const double red, const double green, const double blue) {
+Uint32 Image::ConvertColor(const double red, const double green, const double blue) {
     // conver to unsigned integers
     unsigned char r = static_cast<unsigned char>(red);
     unsigned char g = static_cast<unsigned char>(green);
