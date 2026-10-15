@@ -64,7 +64,7 @@ int CApp::OnExecute() {
         OnRender();
 
     }
-
+//
     return 0;
 }
 
