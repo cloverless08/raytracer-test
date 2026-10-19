@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "../qbLinearAlgebra/qbVector.h"
+#include "./qbLinearAlgebra/qbVector.h"
 
 namespace RayTrace {
     class Ray {
