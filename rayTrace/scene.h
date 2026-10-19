@@ -3,3 +3,22 @@
 //
 
 #pragma once
+
+#include <vector>
+#include <SDL/SDL.h>
+
+#include "image.h"
+
+namespace RayTrace {
+    class Scene {
+    public:
+        // default constructor
+        Scene(); // no destrucotr needed
+
+        // redner function
+        bool Render(Image &output);
+
+    private:
+        // future ref
+    };
+}
