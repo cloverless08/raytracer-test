@@ -10,6 +10,7 @@ add_executable(raytracer_test
         main.cpp
         rayTrace/image.h
         rayTrace/image.cpp
-        rayTrace/scene.h)
+        rayTrace/scene.h
+        rayTrace/scene.cpp)
 
 target_link_libraries(raytracer_test PRIVATE SDL2::SDL2 SDL2::SDL2main)
