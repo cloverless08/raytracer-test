@@ -4,6 +4,7 @@
 
 #include "scene.h"
 #include <SDL2/SDL.h>
+#include "image.h"
 
 // constructor
 RayTrace::Scene::Scene() {
@@ -13,8 +14,8 @@ RayTrace::Scene::Scene() {
 // render func
 bool RayTrace::Scene::Render(Image &outputImage) {
     // get dimensions of output image
-    int sizeX = outputImage.GetXSize();
-    int sizeY = outputImage.GetYSize();
+    int sizeX = outputImage.GetSizeX();
+    int sizeY = outputImage.GetSizeY();
 
     // creates color variation
     for (int x = 0; x < sizeX; ++x) {
