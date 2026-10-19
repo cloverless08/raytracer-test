@@ -26,6 +26,10 @@ public:
 
     Uint32 ConvertColor(const double red, const double green, const double blue); // wait omg this is how im doing it in the sim :0
 
+    // getter functions
+    int GetSizeX();
+    int GetSizeY();
+
 
 private:
 

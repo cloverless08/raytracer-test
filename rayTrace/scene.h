@@ -16,7 +16,7 @@ namespace RayTrace {
         Scene(); // no destrucotr needed
 
         // redner function
-        bool Render(Image &output);
+        bool Render(Image &outputImage);
 
     private:
         // future ref

@@ -118,3 +118,8 @@ Uint32 Image::ConvertColor(const double red, const double green, const double bl
     return pixelColor;
 
 }
+
+// getter getter functions
+int GetSizeX() {
+    return
+}
