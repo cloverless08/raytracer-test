@@ -3,6 +3,7 @@
 //
 
 #include "scene.h"
+#include <SDL2/SDL.h>
 
 // constructor
 RayTrace::Scene::Scene() {
@@ -24,5 +25,5 @@ bool RayTrace::Scene::Render(Image &outputImage) {
         }
     }
 
-    return 0;
+    return false;
 }

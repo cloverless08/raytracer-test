@@ -119,7 +119,10 @@ Uint32 Image::ConvertColor(const double red, const double green, const double bl
 
 }
 
-// getter getter functions
-int GetSizeX() {
-    return
+// dimension etter functions
+int Image::GetSizeX() {
+    return m_sizeX;
+}
+int Image::GetSizeY() {
+    return m_sizeY;
 }
