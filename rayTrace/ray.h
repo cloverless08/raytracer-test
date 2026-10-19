@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "../qbLinearAlgebra/qbVector.hpp"
+#include "../qbLinearAlgebra/qbVector.h"
 
 namespace RayTrace {
     class Ray {
@@ -16,6 +16,10 @@ namespace RayTrace {
         qbVector<double> GetPoint1() const;
         qbVector<double> GetPoint2() const;
 
+        // --------------------------------
+        qbVector<double> m_point1 (3);
+        qbVector<double> m_point2 (3);
+        qbVector<double> m_lab (3); // the vector *between* point 1 and 2
 
 
     };
