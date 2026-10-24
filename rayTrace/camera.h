@@ -40,6 +40,13 @@ namespace rayTrace {
         // update camera geometry
         void UpdateCamera();
 
+    private:
+        qbVector<double> m_cameraPosition(3);
+        qbVector<double> m_cameraLookAt(3);
+        qbVector<double> m_cameraUp(3);
+        double m_cameraLength;
+        double m_cameraHorizontalSize;
+        double m_cameraAspectRatio;
 
     };
 }
