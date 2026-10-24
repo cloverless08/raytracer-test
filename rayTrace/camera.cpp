@@ -20,3 +20,6 @@ void rayTrace::Camera::SetPosition(const qbVector<double> &newPosition) {
     m_cameraPosition = newPosition;
 }
 
+void rayTrace::Camera::SetLookAt(const qbVector<double> &newLookAt) {
+    m_cameraLookAt = newLookAt;
+}
