@@ -34,6 +34,7 @@ namespace rayTrace {
         double getHorizontalSize();
         double getAspectRatio();
 
-
+        // function to get a ray
+        Ray GenerateRay(float projectScreenX, float projectScreenY); // x and y define position on screen that we generate a ray for
     };
 }
