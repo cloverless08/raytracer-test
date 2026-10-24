@@ -16,10 +16,15 @@ rayTrace::Camera::Camera() {
     m_cameraAspectRatio = 1.0;
 }
 
+//paramter assigning functions
 void rayTrace::Camera::SetPosition(const qbVector<double> &newPosition) {
     m_cameraPosition = newPosition;
 }
 
 void rayTrace::Camera::SetLookAt(const qbVector<double> &newLookAt) {
     m_cameraLookAt = newLookAt;
+}
+
+void rayTrace::Camera::SetUp(const qbVector<double> &newUp) {
+    m_cameraUp = newUp;
 }
