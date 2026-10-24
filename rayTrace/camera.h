@@ -41,16 +41,16 @@ namespace rayTrace {
         void UpdateCamera();
 
     private:
-        qbVector<double> m_cameraPosition(3);
-        qbVector<double> m_cameraLookAt(3);
-        qbVector<double> m_cameraUp(3);
+        qbVector<double> m_cameraPosition = qbVector<double>(3);
+        qbVector<double> m_cameraLookAt = qbVector<double>(3);
+        qbVector<double> m_cameraUp = qbVector<double>(3);
         double m_cameraLength;
         double m_cameraHorizontalSize;
         double m_cameraAspectRatio;
 
-        qbVector<double> m_alignment(3);
-        qbVector<double> m_projScreenU(3);
-        qbVector<double> m_projScreenV(3);
-        qbVector<double> m_projScreenCenter(3);
+        qbVector<double> m_alignment = qbVector<double>(3);
+        qbVector<double> m_projScreenU = qbVector<double>(3);
+        qbVector<double> m_projScreenV = qbVector<double>(3);
+        qbVector<double> m_projScreenCenter = qbVector<double>(3);
     };
 }
