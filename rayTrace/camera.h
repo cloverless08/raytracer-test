@@ -48,5 +48,9 @@ namespace rayTrace {
         double m_cameraHorizontalSize;
         double m_cameraAspectRatio;
 
+        qbVector<double> m_alignment(3);
+        qbVector<double> m_projScreenU(3);
+        qbVector<double> m_projScreenV(3);
+        qbVector<double> m_projScreenCenter(3);
     };
 }
