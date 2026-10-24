@@ -19,6 +19,7 @@ namespace rayTrace {
         void SetUp(const qbVector<double> &upVector);
         void SetLength(double newLength); // distance from virtual screen
 
-
+        void SetHorizontalSize(double horizontalSize); // defines aspect ratio
+        void SetVerticalSize(double verticalSize); //defines aspect ratio
     };
 }
