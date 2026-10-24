@@ -20,6 +20,6 @@ namespace rayTrace {
         void SetLength(double newLength); // distance from virtual screen
 
         void SetHorizontalSize(double horizontalSize); // defines aspect ratio
-        void SetVerticalSize(double verticalSize); //defines aspect ratio
+        void SetAspectRatio(double aspectRatio);
     };
 }
