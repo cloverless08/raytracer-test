@@ -15,3 +15,8 @@ rayTrace::Camera::Camera() {
     m_cameraLength = 1.0;
     m_cameraAspectRatio = 1.0;
 }
+
+void rayTrace::Camera::SetPosition(const qbVector<double> &newPosition) {
+    m_cameraPosition = newPosition;
+}
+
