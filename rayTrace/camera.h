@@ -23,8 +23,8 @@ namespace rayTrace {
         void SetAspectRatio(double aspectRatio);
 
         // parameter getter functions
-        qbvector<double> GetPosition() const;
-        qbvector<double> GetLookAt() const;
+        qbVector<double> GetPosition() const;
+        qbVector<double> GetLookAt() const;
         qbVector<double> GetUp() const;
         qbVector<double> GetU(); // screen dimensions getter
         qbVector<double> GetV() const; // screen dimension getter
@@ -35,7 +35,7 @@ namespace rayTrace {
         double getAspectRatio();
 
         // function to get a ray
-        Ray GenerateRay(float projectScreenX, float projectScreenY); // x and y define position on screen that we generate a ray for
+        RayTrace::Ray GenerateRay(float projectScreenX, float projectScreenY); // x and y define position on screen that we generate a ray for
 
         // update camera geometry
         void UpdateCamera();

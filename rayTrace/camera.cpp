@@ -41,4 +41,32 @@ void rayTrace::Camera::SetAspectRatio(double aspectRatio) {
     m_cameraAspectRatio = aspectRatio;
 }
 
+// return paramters of cmaera
+// position
+qbVector<double> rayTrace::Camera::GetPosition() {
+    return m_cameraPosition;
+}
 
+qbVector<double> rayTrace::Camera::GetLookAt() {
+    return m_cameraLookAt;
+}
+
+//up vector
+qbVector<double> rayTrace::Camera::GetUp() {
+    return m_cameraUp;
+}
+
+// length of camera
+qbVector<double> rayTrace::Camera::GetLength() {
+    return m_cameraLength;
+}
+
+// return horizontal size
+double rayTrace::Camera::GetHorizontalSize() {
+    return m_cameraHorizontalSize;
+}
+
+// aspect ratio
+double rayTrace::Camera::GetAspectRatio() {
+    return m_cameraAspectRatio;
+}
