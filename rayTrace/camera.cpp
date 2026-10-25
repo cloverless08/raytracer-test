@@ -37,4 +37,8 @@ void rayTrace::Camera::SetHorizontalSize(double horizontalSize) {
     m_cameraHorizontalSize = horizontalSize;
 }
 
+void rayTrace::Camera::SetAspectRatio(double aspectRatio) {
+    m_cameraAspectRatio = aspectRatio;
+}
+
 
