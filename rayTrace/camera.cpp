@@ -33,3 +33,8 @@ void rayTrace::Camera::SetLength(double newLength) {
     m_cameraLength = newLength;
 }
 
+void rayTrace::Camera::SetHorizontalSize(double horizontalSize) {
+    m_cameraHorizontalSize = horizontalSize;
+}
+
+
