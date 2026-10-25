@@ -28,3 +28,8 @@ void rayTrace::Camera::SetLookAt(const qbVector<double> &newLookAt) {
 void rayTrace::Camera::SetUp(const qbVector<double> &newUp) {
     m_cameraUp = newUp;
 }
+
+void rayTrace::Camera::SetLength(double newLength) {
+    m_cameraLength = newLength;
+}
+
