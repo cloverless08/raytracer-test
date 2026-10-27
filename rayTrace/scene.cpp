@@ -7,12 +7,12 @@
 #include "image.h"
 
 // constructor
-RayTrace::Scene::Scene() {
+Raytrace::Scene::Scene() {
 
 }
 
 // render func
-bool RayTrace::Scene::Render(Image &outputImage) {
+bool Raytrace::Scene::Render(Image &outputImage) {
     // get dimensions of output image
     int sizeX = outputImage.GetSizeX();
     int sizeY = outputImage.GetSizeY();

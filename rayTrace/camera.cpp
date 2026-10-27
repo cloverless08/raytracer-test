@@ -7,7 +7,7 @@
 
 #include<math.h>
 
-rayTrace::Camera::Camera() {
+raytrace::Camera::Camera() {
     m_cameraPosition = qbVector<double> {std::vector<double> {0.0, -10.0, 0.0}}; // 10 units away form origin
     m_cameraLookAt = qbVector<double> {std::vector<double> {0.0, 0.0, 0.0}}; // looking at origin
     m_cameraUp = qbVector<double> {std::vector<double> {0.0, 0.0, 1.0}};
@@ -17,56 +17,56 @@ rayTrace::Camera::Camera() {
 }
 
 //paramter assigning functions
-void rayTrace::Camera::SetPosition(const qbVector<double> &newPosition) {
+void raytrace::Camera::SetPosition(const qbVector<double> &newPosition) {
     m_cameraPosition = newPosition;
 }
 
-void rayTrace::Camera::SetLookAt(const qbVector<double> &newLookAt) {
+void raytrace::Camera::SetLookAt(const qbVector<double> &newLookAt) {
     m_cameraLookAt = newLookAt;
 }
 
-void rayTrace::Camera::SetUp(const qbVector<double> &newUp) {
+void raytrace::Camera::SetUp(const qbVector<double> &newUp) {
     m_cameraUp = newUp;
 }
 
-void rayTrace::Camera::SetLength(double newLength) {
+void raytrace::Camera::SetLength(double newLength) {
     m_cameraLength = newLength;
 }
 
-void rayTrace::Camera::SetHorizontalSize(double horizontalSize) {
+void raytrace::Camera::SetHorizontalSize(double horizontalSize) {
     m_cameraHorizontalSize = horizontalSize;
 }
 
-void rayTrace::Camera::SetAspectRatio(double aspectRatio) {
+void raytrace::Camera::SetAspectRatio(double aspectRatio) {
     m_cameraAspectRatio = aspectRatio;
 }
 
 // return paramters of cmaera
 // position
-qbVector<double> rayTrace::Camera::GetPosition() {
+qbVector<double> raytrace::Camera::GetPosition() {`
     return m_cameraPosition;
 }
 
-qbVector<double> rayTrace::Camera::GetLookAt() {
+qbVector<double> raytrace::Camera::GetLookAt() {
     return m_cameraLookAt;
 }
 
 //up vector
-qbVector<double> rayTrace::Camera::GetUp() {
+qbVector<double> raytrace::Camera::GetUp() {
     return m_cameraUp;
 }
 
 // length of camera
-qbVector<double> rayTrace::Camera::GetLength() {
+qbVector<double> raytrace::Camera::GetLength() {
     return m_cameraLength;
 }
 
 // return horizontal size
-double rayTrace::Camera::GetHorizontalSize() {
+double raytrace::Camera::GetHorizontalSize() {
     return m_cameraHorizontalSize;
 }
 
 // aspect ratio
-double rayTrace::Camera::GetAspectRatio() {
+double raytrace::Camera::GetAspectRatio() {
     return m_cameraAspectRatio;
 }

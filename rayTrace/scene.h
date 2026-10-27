@@ -9,7 +9,7 @@
 
 #include "image.h"
 
-namespace RayTrace {
+namespace Raytrace {
     class Scene {
     public:
         // default constructor

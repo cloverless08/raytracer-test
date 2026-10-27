@@ -24,7 +24,7 @@ private:
     Image m_image;
 
     // declare an instance of the Scene class
-    RayTrace::Scene m_scene;
+    Raytrace::Scene m_scene;
 
     // SDL2 stuff basically
     bool running;

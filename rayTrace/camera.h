@@ -7,7 +7,7 @@
 #include "./qbLinearAlgebra/qbVector.h"
 #include "ray.h"
 
-namespace rayTrace {
+namespace raytrace {
     class Camera {
     public:
         // default constructor
@@ -35,7 +35,7 @@ namespace rayTrace {
         double getAspectRatio();
 
         // function to get a ray
-        RayTrace::Ray GenerateRay(float projectScreenX, float projectScreenY); // x and y define position on screen that we generate a ray for
+        Raytrace::Ray GenerateRay(float projectScreenX, float projectScreenY); // x and y define position on screen that we generate a ray for
 
         // update camera geometry
         void UpdateCamera();
