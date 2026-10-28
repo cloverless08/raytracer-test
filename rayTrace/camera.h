@@ -23,12 +23,12 @@ namespace raytrace {
         void SetAspectRatio(double aspectRatio);
 
         // parameter getter functions
-        qbVector<double> GetPosition() const;
-        qbVector<double> GetLookAt() const;
-        qbVector<double> GetUp() const;
-        qbVector<double> GetU(); // screen dimensions getter
-        qbVector<double> GetV() const; // screen dimension getter
-        qbVector<double> GetScreenCenter() const;
+        [[nodiscard]] qbVector<double> GetPosition() const;
+        [[nodiscard]] qbVector<double> GetLookAt() const;
+        [[nodiscard]] qbVector<double> GetUp() const;
+        [[nodiscard]] qbVector<double> GetU(); // screen dimensions getter
+        [[nodiscard]] qbVector<double> GetV() const; // screen dimension getter
+        [[nodiscard]] qbVector<double> GetScreenCenter() const;
 
         double getLength();
         double getHorizontalSize();

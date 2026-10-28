@@ -43,7 +43,7 @@ void raytrace::Camera::SetAspectRatio(double aspectRatio) {
 
 // return paramters of cmaera
 // position
-qbVector<double> raytrace::Camera::GetPosition() {`
+qbVector<double> raytrace::Camera::GetPosition() {
     return m_cameraPosition;
 }
 
