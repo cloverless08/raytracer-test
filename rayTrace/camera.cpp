@@ -85,3 +85,18 @@ qbVector<double> raytrace::Camera::GetV() {
 qbVector<double> raytrace::Camera::GetScreenCenter() {
     return m_projScreenCenter;
 }
+
+
+// comput camera geometry
+void raytrace::Camera::UpdateCamera() {
+    // compute vector from camera position to lookat position (principle axis)
+    m_alignment = m_cameraLookAt - m_cameraPosition;
+    m_alignment.Normalize();
+
+    // compute U and V vectors
+    m_projScreenU = qbVector<double>::cross(m_alignment, m_cameraUp);
+    m_projScreenU.Normalize();
+
+    m_projScreenV = qbVector<double>::cross(m_projScreenU, m_alignment);
+    m_projScreenV.Normalize();
+}
