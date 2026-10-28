@@ -1,5 +1,9 @@
 //
-// Created by cdemin on 10/18/26.
+// Project: raytracer-test
+// File: rayTrace/scene.cpp
+// Purpose: Implements the scene render loop and frame generation.
+// Author: cdemin
+// Updated: 2026-10-28
 //
 
 #include "scene.h"

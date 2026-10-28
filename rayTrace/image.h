@@ -1,5 +1,9 @@
 //
-// Created by cdemin on 10/14/26.
+// Project: raytracer-test
+// File: rayTrace/image.h
+// Purpose: Declares the image buffer and texture wrapper used by the renderer.
+// Author: cdemin
+// Updated: 2026-10-28
 //
 
 #pragma once

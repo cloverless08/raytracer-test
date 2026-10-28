@@ -1,5 +1,9 @@
 //
-// Created by cdemin on 10/13/26.
+// Project: raytracer-test
+// File: CApp.cpp
+// Purpose: Implements the application shell, SDL setup, and event loop.
+// Author: cdemin
+// Updated: 2026-10-28
 //
 
 #include "CApp.h"

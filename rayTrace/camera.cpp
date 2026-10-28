@@ -1,5 +1,9 @@
 //
-// Created by cdemin on 10/23/26.
+// Project: raytracer-test
+// File: rayTrace/camera.cpp
+// Purpose: Implements camera position, look-at, and projection setup.
+// Author: cdemin
+// Updated: 2026-10-28
 //
 
 #include "camera.h"

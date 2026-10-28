@@ -1,5 +1,9 @@
 //
-// Created by cdemin on 10/14/26.
+// Project: raytracer-test
+// File: rayTrace/image.cpp
+// Purpose: Implements image allocation, ownership, and pixel buffer handling.
+// Author: cdemin
+// Updated: 2026-10-28
 //
 
 #include "image.h"

@@ -1,5 +1,9 @@
 //
-// Created by cdemin on 10/23/26.
+// Project: raytracer-test
+// File: rayTrace/camera.h
+// Purpose: Defines the camera model and view setup for the renderer.
+// Author: cdemin
+// Updated: 2026-10-28
 //
 
 #pragma once

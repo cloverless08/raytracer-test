@@ -1,5 +1,9 @@
 //
-// Created by cdemin on 10/18/26.
+// Project: raytracer-test
+// File: rayTrace/ray.cpp
+// Purpose: Implements ray construction and geometric helpers.
+// Author: cdemin
+// Updated: 2026-10-28
 //
 
 #include "ray.h"

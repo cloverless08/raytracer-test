@@ -1,5 +1,9 @@
 //
-// Created by cdemin on 10/13/26.
+// Project: raytracer-test
+// File: CApp.h
+// Purpose: Public interface for the top-level application controller.
+// Author: cdemin
+// Updated: 2026-10-28
 //
 
 #pragma once

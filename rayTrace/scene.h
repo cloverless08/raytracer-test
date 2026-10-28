@@ -1,5 +1,9 @@
 //
-// Created by cdemin on 10/18/26.
+// Project: raytracer-test
+// File: rayTrace/scene.h
+// Purpose: Declares the scene graph and render pipeline interface.
+// Author: cdemin
+// Updated: 2026-10-28
 //
 
 #pragma once
