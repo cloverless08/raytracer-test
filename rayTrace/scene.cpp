@@ -12,7 +12,7 @@ Raytrace::Scene::Scene() {
 }
 
 // render func
-bool Raytrace::Scene::Render(Image &outputImage) {
+bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
     // get dimensions of output image
     int sizeX = outputImage.GetSizeX();
     int sizeY = outputImage.GetSizeY();
