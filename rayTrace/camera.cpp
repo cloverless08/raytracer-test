@@ -80,3 +80,8 @@ qbVector<double> raytrace::Camera::GetU() {
 qbVector<double> raytrace::Camera::GetV() {
     return m_projScreenV;
 }
+
+// get proj screen center
+qbVector<double> raytrace::Camera::GetScreenCenter() {
+    return m_projScreenCenter;
+}
