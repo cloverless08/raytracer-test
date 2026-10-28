@@ -6,7 +6,7 @@
 
 #include "./qbLinearAlgebra/qbVector.h"
 
-namespace Raytrace {
+namespace raytrace {
     class Ray {
     public:
         //defualt constructor

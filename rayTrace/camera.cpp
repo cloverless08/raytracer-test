@@ -106,5 +106,17 @@ void raytrace::Camera::UpdateCamera() {
     //modify U and V to match size and asepct ratio
     m_projScreenU = m_projScreenU * m_cameraHorizontalSize; // change unit length to screen dimensions
     m_projScreenV = m_projScreenV * (m_cameraHorizontalSize / m_cameraAspectRatio);
-    
+
+}
+
+raytrace::Ray raytrace::Camera::GenerateRay(float projScreenX, float projScreenY) {
+
+    // compute location of screen point (in world coordinates) U/V --> X/Y/Z
+    qbVector<double> screenWorldPart1 = m_projScreenCenter + (m_projScreenU * projScreenX); // transorms U coordinate to world coordinates
+    qbVector<double> screenWorldCoordinate = screenWorldPart1 + (m_projScreenV * projScreenY);
+
+    // compute ray
+    return raytrace::Ray(m_cameraPosition, screenWorldCoordinate);
+
+
 }
