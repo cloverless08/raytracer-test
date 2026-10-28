@@ -17,9 +17,9 @@ namespace raytrace {
         qbVector<double> GetPoint2() const;
 
         // --------------------------------
-        qbVector<double> m_point1 (3);
-        qbVector<double> m_point2 (3);
-        qbVector<double> m_lab (3); // the vector *between* point 1 and 2
+        qbVector<double> m_point1 = qbVector<double>(3);
+        qbVector<double> m_point2 = qbVector<double>(3);
+        qbVector<double> m_lab = qbVector<double>(3); // the vector *between* point 1 and 2
 
 
     };

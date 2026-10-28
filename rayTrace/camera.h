@@ -13,7 +13,7 @@ namespace raytrace {
         // default constructor
         Camera();
 
-        // camera paramter functions
+        // camera parameter functions
         void SetPosition(const qbVector<double> &newPosition);
         void SetLookAt(const qbVector<double> &newLookAt);
         void SetUp(const qbVector<double> &upVector);
