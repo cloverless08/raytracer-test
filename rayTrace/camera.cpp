@@ -70,3 +70,13 @@ double raytrace::Camera::GetHorizontalSize() {
 double raytrace::Camera::GetAspectRatio() {
     return m_cameraAspectRatio;
 }
+
+
+// method to return U and V vectors
+qbVector<double> raytrace::Camera::GetU() {
+    return m_projScreenU;
+}
+
+qbVector<double> raytrace::Camera::GetV() {
+    return m_projScreenV;
+}
