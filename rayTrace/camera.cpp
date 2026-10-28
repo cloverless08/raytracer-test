@@ -43,21 +43,21 @@ void raytrace::Camera::SetAspectRatio(double aspectRatio) {
 
 // return paramters of cmaera
 // position
-qbVector<double> raytrace::Camera::GetPosition() {
+qbVector<double> raytrace::Camera::GetPosition() const {
     return m_cameraPosition;
 }
 
-qbVector<double> raytrace::Camera::GetLookAt() {
+qbVector<double> raytrace::Camera::GetLookAt() const {
     return m_cameraLookAt;
 }
 
 //up vector
-qbVector<double> raytrace::Camera::GetUp() {
+qbVector<double> raytrace::Camera::GetUp() const {
     return m_cameraUp;
 }
 
 // length of camera
-qbVector<double> raytrace::Camera::GetLength() {
+double raytrace::Camera::GetLength() {
     return m_cameraLength;
 }
 
@@ -73,16 +73,16 @@ double raytrace::Camera::GetAspectRatio() {
 
 
 // method to return U and V vectors
-qbVector<double> raytrace::Camera::GetU() {
+qbVector<double> raytrace::Camera::GetU() const {
     return m_projScreenU;
 }
 
-qbVector<double> raytrace::Camera::GetV() {
+qbVector<double> raytrace::Camera::GetV() const {
     return m_projScreenV;
 }
 
 // get proj screen center
-qbVector<double> raytrace::Camera::GetScreenCenter() {
+qbVector<double> raytrace::Camera::GetScreenCenter() const {
     return m_projScreenCenter;
 }
 

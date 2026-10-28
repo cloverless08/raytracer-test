@@ -26,13 +26,13 @@ namespace raytrace {
         [[nodiscard]] qbVector<double> GetPosition() const;
         [[nodiscard]] qbVector<double> GetLookAt() const;
         [[nodiscard]] qbVector<double> GetUp() const;
-        [[nodiscard]] qbVector<double> GetU(); // screen dimensions getter
+        [[nodiscard]] qbVector<double> GetU() const; // screen dimensions getter
         [[nodiscard]] qbVector<double> GetV() const; // screen dimension getter
         [[nodiscard]] qbVector<double> GetScreenCenter() const;
 
-        double getLength();
-        double getHorizontalSize();
-        double getAspectRatio();
+        double GetLength();
+        double GetHorizontalSize();
+        double GetAspectRatio();
 
         // function to get a ray
         raytrace::Ray GenerateRay(float projectScreenX, float projectScreenY); // x and y define position on screen that we generate a ray for
