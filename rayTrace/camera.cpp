@@ -99,4 +99,12 @@ void raytrace::Camera::UpdateCamera() {
 
     m_projScreenV = qbVector<double>::cross(m_projScreenU, m_alignment);
     m_projScreenV.Normalize();
+
+    // compute position of center point of screen
+    m_projScreenCenter = m_cameraPosition + (m_cameraLength * m_alignment);
+
+    //modify U and V to match size and asepct ratio
+    m_projScreenU = m_projScreenU * m_cameraHorizontalSize; // change unit length to screen dimensions
+    m_projScreenV = m_projScreenV * (m_cameraHorizontalSize / m_cameraAspectRatio);
+    
 }
