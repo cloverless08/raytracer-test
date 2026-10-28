@@ -21,7 +21,7 @@ public:
 
 private:
     // declare in instance of the Image class
-    Image m_image;
+    raytrace::Image m_image;
 
     // declare an instance of the Scene class
     Raytrace::Scene m_scene;
