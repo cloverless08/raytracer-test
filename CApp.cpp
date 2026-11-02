@@ -50,7 +50,6 @@ bool CApp::OnInit() {
 
         testCamera.UpdateCamera();
 
-
         // get scren center and UV coordinate vectors, then display
         auto screenCenter = testCamera.GetScreenCenter();
         auto screenU = testCamera.GetU();
@@ -64,6 +63,14 @@ bool CApp::OnInit() {
         PrintVector(screenV);
 
 
+        // moved render to happen once up here ig
+        SDL_SetRenderDrawColor(pRenderer, 255, 255, 255, 255);
+        SDL_RenderClear(pRenderer);
+
+        m_scene.Render(m_image);
+        m_image.Display(WIDTH, HEIGHT);
+
+        SDL_RenderPresent(pRenderer);
 
     } else {
         return false;
@@ -103,15 +110,15 @@ void CApp::OnLoop() {
 
 void CApp::OnRender() {
  // set background to white
-    SDL_SetRenderDrawColor(pRenderer, 255, 255, 255, 255); // white is a stupid color tbh
-    SDL_RenderClear(pRenderer);
+    //SDL_SetRenderDrawColor(pRenderer, 255, 255, 255, 255); // white is a stupid color tbh
+    //SDL_RenderClear(pRenderer);
 
-    m_scene.Render(m_image); // render the scene
+    //m_scene.Render(m_image); // render the scene
 
     // display the image
-    m_image.Display(WIDTH, HEIGHT);
+    //m_image.Display(WIDTH, HEIGHT);
 
-    SDL_RenderPresent(pRenderer);
+    //SDL_RenderPresent(pRenderer);
 }
 
 void CApp::OnExit() {
