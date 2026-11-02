@@ -12,6 +12,8 @@
 #include "./rayTrace/image.h"
 #include "./rayTrace/scene.h"
 
+#include "./rayTrace/camera.h"
+
 class CApp {
 public:
     CApp();
@@ -34,4 +36,7 @@ private:
     bool running;
     SDL_Window *pWindow;
     SDL_Renderer *pRenderer;
+
+
+    void PrintVector(const qbVector<double> &inputvec);
 };

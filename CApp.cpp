@@ -9,6 +9,8 @@
 #include "CApp.h"
 #include "SDL2/SDL.h"
 
+#include "./rayTrace/qbLinearAlgebra/qbVector.h"
+
 constexpr int HEIGHT = 480;
 constexpr int WIDTH = 640;
 
@@ -36,6 +38,32 @@ bool CApp::OnInit() {
     if (pWindow != nullptr) {
         pRenderer = SDL_CreateRenderer(pWindow, -1, 0); // initalize renderer
         m_image.Init(WIDTH, HEIGHT, pRenderer); // initalize image instance
+
+    // initialize camera
+    raytrace::Camera testCamera;
+        testCamera.SetPosition(qbVector<double>(std::vector<double>{0.0, 0.0, 0.0}));
+        testCamera.SetLookAt(qbVector<double>(std::vector<double>{0.0, 2.0, 0.0})); // looks 2 units away in the y direction
+        testCamera.SetUp(qbVector<double>(std::vector<double>{0.0, 0.0, 1.0}));
+        testCamera.SetLength(1.0);
+        testCamera.SetHorizontalSize(1.0);
+        testCamera.SetAspectRatio(1.0);
+
+        testCamera.UpdateCamera();
+
+
+        // get scren center and UV coordinate vectors, then display
+        auto screenCenter = testCamera.GetScreenCenter();
+        auto screenU = testCamera.GetU();
+        auto screenV = testCamera.GetV();
+
+        std::cout << "Camera Screen Center: " << std::endl;
+        PrintVector(screenCenter);
+        std::cout << "\nCamera U Vector:" << std::endl;
+        PrintVector(screenU);
+        std::cout << "\nCamera V Vector:" << std::endl;
+        PrintVector(screenV);
+
+
 
     } else {
         return false;
@@ -93,4 +121,15 @@ void CApp::OnExit() {
     pWindow = nullptr;
 
     SDL_Quit();
+}
+
+
+// private function definitions
+//----------------------------------
+
+void CApp::PrintVector(const qbVector<double> &inputvec) {
+    int numRows = inputvec.GetNumDims();
+    for (int i = 0; i < numRows; ++i) {
+        std::cout << std::fixed << std::setprecision(3) << inputvec.GetElement(i) << std::endl;
+    }
 }
