@@ -39,7 +39,7 @@ namespace raytrace {
         double GetAspectRatio();
 
         // function to get a ray
-        bool raytrace::Ray GenerateRay(float projectScreenX, float projectScreenY,
+        bool GenerateRay(float projectScreenX, float projectScreenY,
             raytrace::Ray &camRay); // x and y define position on screen that we generate a ray for
 
         // update camera geometry
