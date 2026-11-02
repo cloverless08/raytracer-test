@@ -16,6 +16,11 @@ add_executable(raytracer_test
         rayTrace/ray.cpp
         rayTrace/camera.h
         rayTrace/camera.cpp
+        rayTrace/objects/object_base.h
+        rayTrace/objects/object_base.h
+        rayTrace/objects/object_base.cpp
+        rayTrace/objects/objsphere.h
+        rayTrace/objects/objsphere.cpp
 )
 
 target_link_libraries(raytracer_test PRIVATE SDL2::SDL2 SDL2::SDL2main)
