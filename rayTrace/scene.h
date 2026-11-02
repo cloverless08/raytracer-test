@@ -12,6 +12,8 @@
 #include <SDL2/SDL.h>
 
 #include "image.h"
+#include "camera.h"
+#include "objects/objsphere.h"
 
 namespace Raytrace {
     class Scene {
@@ -23,6 +25,10 @@ namespace Raytrace {
         bool Render(raytrace::Image &outputImage);
 
     private:
-        // future ref
+        raytrace::Camera m_camera;
+
+        // unit sphere on origin for testing
+        raytrace::ObjSphere m_testSphere;
+
     };
 }

@@ -12,7 +12,15 @@
 
 // constructor
 Raytrace::Scene::Scene() {
+    // configure camera
+    m_camera.SetPosition(qbVector<double>{std::vector<double>{0.0, -10.0, 0.0}} );
+    m_camera.SetLookAt(qbVector<double>{std::vector<double>{0.0, 0.0, 0.0}}); // look at origin
+    m_camera.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
 
+    m_camera.SetHorizontalSize(0.25);
+    m_camera.SetAspectRatio(16.0 / 9.0);
+
+    m_camera.UpdateCamera();
 }
 
 // render func
@@ -21,14 +29,7 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
     int sizeX = outputImage.GetSizeX();
     int sizeY = outputImage.GetSizeY();
 
-    // creates color variation
-    for (int x = 0; x < sizeX; ++x) {
-        for (int y = 0; y < sizeY; ++y) {
-            double red = (static_cast<double>(x)/static_cast<double>(sizeX)) * 255.0;
-            double green = (static_cast<double>(y)/static_cast<double>(sizeY)) * 225.0;
-            outputImage.SetPixel(x, y, red, green, 0.0);
-        }
-    }
+
 
     return false;
 }
