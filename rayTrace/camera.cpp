@@ -122,6 +122,8 @@ bool raytrace::Camera::GenerateRay(float projScreenX, float projScreenY, raytrac
     camRay.m_point1 = m_cameraPosition;
     camRay.m_point2 = screenWorldCoordinate;
 
+    camRay.m_lab = screenWorldCoordinate - m_cameraPosition;
+
     // compute ray
     return true;
 
