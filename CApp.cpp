@@ -39,30 +39,6 @@ bool CApp::OnInit() {
         pRenderer = SDL_CreateRenderer(pWindow, -1, 0); // initalize renderer
         m_image.Init(WIDTH, HEIGHT, pRenderer); // initalize image instance
 
-    // initialize camera
-    raytrace::Camera testCamera;
-        testCamera.SetPosition(qbVector<double>(std::vector<double>{0.0, 0.0, 0.0}));
-        testCamera.SetLookAt(qbVector<double>(std::vector<double>{0.0, 2.0, 0.0})); // looks 2 units away in the y direction
-        testCamera.SetUp(qbVector<double>(std::vector<double>{0.0, 0.0, 1.0}));
-        testCamera.SetLength(1.0);
-        testCamera.SetHorizontalSize(1.0);
-        testCamera.SetAspectRatio(1.0);
-
-        testCamera.UpdateCamera();
-
-        // get scren center and UV coordinate vectors, then display
-        auto screenCenter = testCamera.GetScreenCenter();
-        auto screenU = testCamera.GetU();
-        auto screenV = testCamera.GetV();
-
-        std::cout << "Camera Screen Center: " << std::endl;
-        PrintVector(screenCenter);
-        std::cout << "\nCamera U Vector:" << std::endl;
-        PrintVector(screenU);
-        std::cout << "\nCamera V Vector:" << std::endl;
-        PrintVector(screenV);
-
-
         // moved render to happen once up here ig
         SDL_SetRenderDrawColor(pRenderer, 255, 255, 255, 255);
         SDL_RenderClear(pRenderer);
