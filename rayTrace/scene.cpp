@@ -29,7 +29,40 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
     int sizeX = outputImage.GetSizeX();
     int sizeY = outputImage.GetSizeY();
 
+    std::cout << "sizeX = " << sizeX << std::endl;
+    std::cout << "sizeY = " << sizeY << std::endl;
 
+    // loop over each pixel in image
+    raytrace::Ray camRay;
+    qbVector<double> intersectionPoint(3);
+    qbVector<double> localNorm(3);
+    qbVector<double> localColor(3);
+
+    double xFactor = 1.0 / (static_cast<double>(sizeX) / 2.0);
+    double yFactor = 1.0 / (static_cast<double>(sizeY) / 2.0);
+
+    double minDistance = 1e6;
+    double maxDinstance = 0.0;
+
+    for (int x = 0; x < sizeX; ++x) {
+        for (int y = 0; y < sizeY; ++y) {
+            // normalize x and y coordinate to range from -1 to 1
+            double normX = (static_cast<double>(x) * xFactor) - 1.0;
+            double normY = (static_cast<double>(y) * yFactor) - 1.0;
+
+            // generate a ray for this pixel
+            m_camera.GenerateRay(normX, normY, camRay);
+
+            // test for valid intersection and modify screen
+            bool validIntersection = m_testSphere.TestIntersection(camRay, intersectionPoint, localNorm, localColor);
+
+            if (validIntersection) {
+                outputImage.SetPixel(x, y, 255.0, 255.0, 255.0);
+            } else {
+                outputImage.SetPixel(x, y, 0.0, 0.0, 0.0);
+            }
+        }
+    }
 
     return false;
 }
