@@ -44,8 +44,13 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
     double minDistance = 1e6;
     double maxDinstance = 0.0;
 
+    // actually raytrace it all
     for (int x = 0; x < sizeX; ++x) {
         for (int y = 0; y < sizeY; ++y) {
+
+            std::cout << "x = " << x << " y = " << y << std::endl;
+            std::cout << "Starting calculation..." << std::endl;
+
             // normalize x and y coordinate to range from -1 to 1
             double normX = (static_cast<double>(x) * xFactor) - 1.0;
             double normY = (static_cast<double>(y) * yFactor) - 1.0;
@@ -57,10 +62,12 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
             bool validIntersection = m_testSphere.TestIntersection(camRay, intersectionPoint, localNorm, localColor);
 
             if (validIntersection) {
-                outputImage.SetPixel(x, y, 255.0, 255.0, 255.0);
+                outputImage.SetPixel(x, y, 255.0, 0.0, 0.0);
             } else {
                 outputImage.SetPixel(x, y, 0.0, 0.0, 0.0);
             }
+
+            std::cout << "done" << std::endl;
         }
     }
 
