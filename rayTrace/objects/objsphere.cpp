@@ -39,7 +39,7 @@ bool raytrace::ObjSphere::TestIntersection(
     double intTest = (b*b) - 4.0 * c; // remember a = 1
 
     if (intTest > 0.0) {
-        // we have intersetction
+        // we have intersection
         return true;
     } else {
         // we have not intersection

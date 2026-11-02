@@ -63,8 +63,10 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
 
             if (validIntersection) {
                 outputImage.SetPixel(x, y, 255.0, 0.0, 0.0);
+                std::cout << "true" << std::endl;
             } else {
                 outputImage.SetPixel(x, y, 0.0, 0.0, 0.0);
+                std::cout << "false" << std::endl;
             }
 
             std::cout << "done" << std::endl;
