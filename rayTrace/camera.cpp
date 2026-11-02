@@ -113,7 +113,7 @@ void raytrace::Camera::UpdateCamera() {
 
 }
 
-raytrace::Ray raytrace::Camera::GenerateRay(float projScreenX, float projScreenY) {
+bool raytrace::Ray raytrace::Camera::GenerateRay(float projScreenX, float projScreenY, raytrace::Ray &camRay) {
 
     // compute location of screen point (in world coordinates) U/V --> X/Y/Z
     qbVector<double> screenWorldPart1 = m_projScreenCenter + (m_projScreenU * projScreenX); // transorms U coordinate to world coordinates
