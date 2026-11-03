@@ -27,6 +27,6 @@ namespace raytrace {
     //private:
         qbVector<double> m_color{3};
         qbVector<double> m_location{3};
-        qbVector<double> m_intensity{3};
+        double m_intensity{3};
     };
 }

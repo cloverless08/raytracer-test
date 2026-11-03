@@ -25,6 +25,12 @@ Raytrace::Scene::Scene() {
 
     // construct test sphere
     m_objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere()));
+
+    // construct a test light source
+    m_lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
+    // modify initial location and color
+    m_lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
+    m_lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
 }
 
 // render func
@@ -68,6 +74,19 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
                 bool validIntersection = currentObject -> TestIntersection(camRay, intersectionPoint, localNorm, localColor);
 
                 if (validIntersection) {
+                    // compute intensity of illumination
+                    double intensity;
+                    qbVector<double> color {3};
+                    bool validIllumination = false;
+                    for (auto currentLight : m_lightList) { // currently hard-coded to only deal with one light source
+                        validIllumination = currentLight -> ComputeIllumination(intersectionPoint,
+                            localNorm,
+                            m_objectList,
+                            currentObject,
+                            color,
+                            intensity);
+                    }
+
                     // compute distance between camera and int
                     double dist = (intersectionPoint - camRay.m_point1).norm();
                     if (dist > maxDistance) { // check mainly for debugging
@@ -78,7 +97,14 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
                         minDistance = dist;
                     }
 
-                    outputImage.SetPixel(x, y, 255.0 - ((dist - 9.0) / 0.94605) * 255.0, 0.0, 0.0);
+                    //outputImage.SetPixel(x, y, 255.0 - ((dist - 9.0) / 0.94605) * 255.0, 0.0, 0.0);
+                    if (validIllumination) {
+                        outputImage.SetPixel(x, y, 255.0 * intensity, 0.0, 0.0);
+                    } else {
+                        outputImage.SetPixel(x, y, 0.0, 0.0, 0.0); // sets black if theres no illumination
+                    }
+
+
                     std::cout << "true" << std::endl;
                 } else {
                     outputImage.SetPixel(x, y, 0.0, 0.0, 0.0);

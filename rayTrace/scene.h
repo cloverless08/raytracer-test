@@ -15,6 +15,7 @@
 #include "image.h"
 #include "camera.h"
 #include "objects/objsphere.h"
+#include "objects/pointlight.h"
 
 namespace Raytrace {
     class Scene {
@@ -30,6 +31,9 @@ namespace Raytrace {
 
         // list of objects in scene
         std::vector<std::shared_ptr<raytrace::ObjectBase>> m_objectList;
+
+        // list of lights in scene
+        std::vector<std::shared_ptr<raytrace::LightBase>> m_lightList;
 
         // unit sphere on origin for testing
         raytrace::ObjSphere m_testSphere;
