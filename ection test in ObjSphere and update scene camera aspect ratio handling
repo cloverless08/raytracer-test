@@ -1,0 +1,104 @@
+[33me4e8935[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m updated cmake lists
+[33me9656a0[m Refactor intersection test in ObjSphere and update scene camera aspect ratio handling
+[33m6c7af2c[m .
+[33mf8280eb[m made build for testing and removed test camera block
+[33m8d077cf[m its black?????????????????????
+[33mbaae297[m moved render pipeline to happen once on init
+[33mcf2900a[m 'actually implementing raytracing' established loop to cast ray through all pixels in the screen
+[33m69449d9[m added incudes and implement member camera and sphere to camera.h; removed test gradient; added defauly constructor configurations for scene;
+[33maa4f203[m added and populated new default constructor for Ray
+[33me5d96f7[m .
+[33m2c0ece3[m modified generateray function in camera to include camray
+[33m730cd85[m modified generateray function in camera to include camray
+[33mff8e71a[m .
+[33mc264610[m defined ray intersection test in objsphere.cpp
+[33m706f17a[m created objsphere.cpp and defined constructor and decstructor, started framework for function definitions
+[33m6494775[m created objsphere.h and declared overrides and members
+[33mfb55d8e[m built objectbase class for all object types
+[33m1a66616[m structure for testing camera class
+[33mf2189f7[m update file headers across multiple source files with project details, purpose, and author information
+[33m9f1e5e8[m fixed all compile-time errors (yay): namespace mismath in remaining Image class calls
+[33m1d78419[m fixed *some* of the camera.cpp errors by flagging definitions as const to match declarations; fixed remaining errors in camera.cpp (stupid reasons for them): horziontal size, length, and aspect ratio were all just aname mismatched *check cases!!*. U and V vector getters needed to be flagged const;
+[33m31864be[m fixed compile-time error in ray.h by manuall declaring number of dimensions for member point variables, retroactively fixed errors in ray.cpp (yay):
+[33m5a54de0[m working on fixing errors in camera.cpp; made function declarations in camera.h [[nodiscard]] bc my ide told me to
+[33m15120f3[m fixed a mutlitude of namespace erros across many files; known compile-time errors: ray.cpp has multiple 'cannot convert rvalue' errors, camera.cpp has 'no member' errors on every instance of camera parameter definitions
+[33m58241eb[m changed Ray's namespace to raytraced to match; created definition for Camera::Generate ray in camera.cpp: computed UV coordinates to XYZ world coordintes; compute ray from previous implementation and camera position
+[33m050804c[m raytrace::Camera::UpdateCamera() position center of screen, function to change U and V from unit vectors
+[33m00e1557[m started mutator function in camera.cpp to UpdateCamera(), added position/lookat vecotr, computed U and V vectors
+[33ma8c8dff[m getter function in camera.cpp for screen center
+[33m343ef16[m getter functions in camera.cpp for projection screen U and V
+[33meb065ee[m refactored namespace rayTrace to raytrace and added Image to namespace raytrace
+[33mddf07d5[m fixed namspace mismath in camera.h; added paramter getter functions in camera.cpp; known compile-time errors: missing member errors in camera.cpp;
+[33m5ce17e3[m camera.cpp SetAspectRatio() definition
+[33mc23983d[m camera.cpp SetHorizontalSize() definition
+[33m6280112[m camera.cpp SetLength() definition
+[33md6bfacd[m camera.cpp SetUp() definition
+[33md0ff62c[m camera.cpp SetLookAt() definition
+[33m3bc1818[m camera.cpp set position definition
+[33m27f4176[m camera.cpp default constructor
+[33m5fee08d[m fixed 'expected paramter declaration' error in camera.h
+[33m3b0d7a4[m camera.h
+[33m137cbdc[m private member variables
+[33m4319974[m function to update camera geometry
+[33m3c3f40f[m ray generation declaration
+[33m2080caa[m parameter getter functions declaration
+[33me448b16[m aspect ratio parameter functions
+[33mf9d4bb0[m aspect ratio parameter functions
+[33meb7ff95[m default constructor and paramter functions
+[33m0f12aa5[m added files for camera
+[33m58a9b84[m .
+[33me35f89a[m ray.h function definitions in ray.cpp
+[33m0d25b23[m ray.h: point functions; IDE error flagging declarations;
+[33m7381806[m ray.h: default constructor and getter functions
+[33mf3a43ad[m .
+[33m9f23422[m cloned QuantitativeBytes Linear Algebra library for simplicity
+[33m548cad7[m added render loop to OnRender()
+[33mca87d6e[m fixed compile-time error by refactorng getter function names
+[33m264d452[m removed deprecated render loop in CApp.cpp
+[33m9cadbcc[m added scene include directory to CApp; added instance of scene object
+[33mb06ef21[m defined getter functions
+[33m7186d7b[m scene.cpp: defined defauly constuctor; created basic render function with colour variation
+[33mca80f6b[m scene.h: added default constructor; added render function declaration; added private function space for future.
+[33m46ffebf[m made scene header source file
+[33mcffa942[m made scene header source file
+[33mbfcee83[m added and updated .gitignore
+[33mb8b56f9[m updated readme
+[33m2bf3009[m bro at this point--after everyhting ive done--its to the same point i was at in the sim weeks ago lol
+[33m6c2d67d[m fixed argument order for resolution in Image::Display
+[33m9d440aa[m .
+[33mdb8cc1c[m fixed compile-time linker error; fixed diplay logic erorr;
+[33m4e34e82[m defined convert to color function; did NOT fix undefined reference bug
+[33m621215f[m defined texutre initialization function; potentially found bug fix for undefined reference
+[33m8f65a80[m handling for sdl2 big endian byte orders
+[33m5435c2b[m found compile-time bug: undefined reference to ConertColor(); changed deault permissions of some functions in class image; naemspace checking trying to solve this fucking linker error (i think thats wha tit is)
+[33me9d2d07[m image.cpp SetPixel() and Display() function defininitions; backfilled arguments for width and height
+[33m3a8a82a[m image.cpp SetPixel() and Display() function defininitions
+[33mc56b5c5[m image.cpp functions
+[33ma39c2ce[m began intializing image handler; color channel vector resizing
+[33m66eded5[m added image source file and create default constructor and deconstructor
+[33m453c1b4[m finihsed populating image.h with all private variables
+[33md05c0ff[m popuating image.h and created private functions
+[33mfde2cfa[m .
+[33m6545baf[m created image header file; image class default constructor and deconstructor; initialization function
+[33m15836e5[m removed makefiles and build after test
+[33m4a4a0ab[m testing cmake files
+[33m3bba0e1[m fixed linnker error, routed cmake to find SDL2 package
+[33ma0b2127[m fixed comilations errors: missing return in OnExecute(). compilation error: undefined references to all sdl2 objects in CApp.cpp
+[33m596df78[m ls
+[33mfcea0ca[m added main.cpp
+[33m4cccf67[m swapped mixed height and width variables (constants)
+[33m3349060[m updated window name to someting way cooler
+[33m30a0b8d[m  NOW finihsed adding header functions and populating all functions in CApp.cpp
+[33mb7db106[m finihsed adding header functions and populating OnRender()
+[33m109aa17[m handling for main running loop; implementing core loop
+[33m4fd890f[m handling for main running loop; implementing core loop
+[33mab3664e[m changed zero constants to nullptr, fixed typo
+[33mb187b97[m fixed boolean comparison bug
+[33m5c34afb[m initialized sdl2 renderer
+[33m8595c89[m resolution contants; initial CApp constructor definition in main; started init of SDL2
+[33m485171d[m finished header file for project
+[33m9a9611a[m CApp.h header with initial constructors and updated readme
+[33mde27d26[m added readme
+[33m7eb9623[m added sdl2
+[33m84dbbe4[m hello world
+[33m083db6a[m inital commit

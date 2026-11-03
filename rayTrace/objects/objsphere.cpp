@@ -21,33 +21,30 @@ bool raytrace::ObjSphere::TestIntersection(
     qbVector<double> &intPoint,
     qbVector<double> &localNorm,
     qbVector<double> &localColor) {
-    constexpr double radius = 1.0;
-    const double a = qbVector<double>::dot(castRay.m_lab, castRay.m_lab);
-    if (a == 0.0) {
+    // ===================================
+
+
+    // compute values of a b and c
+    qbVector<double> vhat = castRay.m_lab;
+    vhat.Normalize();
+
+    // NOTE:
+    // a is equal to the squared magnitude of the direction of the cast ray
+    // since its unit value, the value of a will always be 1
+
+    double b = 2.0 * qbVector<double>::dot(castRay.m_point1, vhat);
+    double c = qbVector<double>::dot(castRay.m_point1, castRay.m_point1); // start point of ray to itself
+
+    // test for intersection
+    double intTest = (b*b) - 4.0 * c; // remember a = 1
+
+    if (intTest > 0.0) {
+        // we have intersection
+        return true;
+    } else {
+        // we have not intersection
         return false;
     }
 
-    const double b = 2.0 * qbVector<double>::dot(castRay.m_point1, castRay.m_lab);
-    const double c = qbVector<double>::dot(castRay.m_point1, castRay.m_point1) - radius * radius;
-    const double discriminant = b * b - 4.0 * a * c;
-    if (discriminant < 0.0) {
-        return false;
-    }
 
-    const double root = std::sqrt(discriminant);
-    const double t1 = (-b - root) / (2.0 * a);
-    const double t2 = (-b + root) / (2.0 * a);
-    double t = t1;
-    if (t <= 0.0) {
-        t = t2;
-    }
-    if (t <= 0.0) {
-        return false;
-    }
-
-    intPoint = castRay.m_point1 + (castRay.m_lab * t);
-    localNorm = intPoint;
-    localNorm.Normalize();
-    localColor = m_baseColor;
-    return true;
 }

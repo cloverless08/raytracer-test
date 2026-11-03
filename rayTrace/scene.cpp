@@ -18,6 +18,8 @@ Raytrace::Scene::Scene() {
     m_camera.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
 
     m_camera.SetHorizontalSize(0.25);
+    m_camera.SetAspectRatio(16.0 / 9.0);
+
     m_camera.UpdateCamera();
 }
 
@@ -26,13 +28,6 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
     // get dimensions of output image
     int sizeX = outputImage.GetSizeX();
     int sizeY = outputImage.GetSizeY();
-
-    if (sizeX <= 0 || sizeY <= 0) {
-        return false;
-    }
-
-    m_camera.SetAspectRatio(static_cast<double>(sizeX) / sizeY);
-    m_camera.UpdateCamera();
 
     std::cout << "sizeX = " << sizeX << std::endl;
     std::cout << "sizeY = " << sizeY << std::endl;
