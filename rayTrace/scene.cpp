@@ -29,7 +29,19 @@ Raytrace::Scene::Scene() {
     // construct a test light source
     m_lightList.push_back(std::make_shared<raytrace::PointLight>(raytrace::PointLight())); // calls default constructor
     // modify initial location and color
-    m_lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
+    std::vector<double> inputLocation;
+    //std::vector<double> inputColor;
+
+    for (int i = 0; i < 3; ++i) {
+        double input;
+        std::cout << "Coordinate " << i << ": ";
+        std::cin >> input;
+        input = static_cast<double>(input);
+        inputLocation.push_back(input);
+    }
+
+    //m_lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
+    m_lightList.at(0) -> m_location = qbVector<double> {inputLocation};
     m_lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
 }
 
