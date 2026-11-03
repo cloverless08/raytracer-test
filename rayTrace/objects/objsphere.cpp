@@ -55,6 +55,10 @@ bool raytrace::ObjSphere::TestIntersection(
                 intPoint = castRay.m_point1 + (vhat * t2);
             }
 
+            // compute local normal
+            localNorm = intPoint; // only works for sphere at origin
+            localNorm.Normalize();
+
             return true;
         }
     } else {
