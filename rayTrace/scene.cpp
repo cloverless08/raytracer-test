@@ -31,6 +31,8 @@ Raytrace::Scene::Scene() {
     // modify initial location and color
     m_lightList.at(0) -> m_location = qbVector<double> {std::vector<double>{5.0, -10.0, -5.0}};
     m_lightList.at(0) -> m_color = qbVector<double> {std::vector<double>{255.0, 255.0, 255.0}};
+    std::cout << m_lightList.at(0) -> m_location << std::endl;
+    std::cout << m_lightList.at(0) -> m_color << std::endl;
 }
 
 // render func
