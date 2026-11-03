@@ -39,7 +39,7 @@ bool raytrace::PointLight::ComputeIllumination(const qbVector<double> &intPoint,
     if (angle > 1.5708) { // pi/2 ~= 1.5708
         // no illumination
         color = m_color;
-        intensity  0.0;
+        intensity = 0.0;
         return false;
     } else {
         color = m_color;

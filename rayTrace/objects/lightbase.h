@@ -24,7 +24,7 @@ namespace raytrace {
             const std::shared_ptr<raytrace::ObjectBase> &currentObject,
             qbVector<double> &color, double &intensity);
 
-    private:
+    //private:
         qbVector<double> m_color{3};
         qbVector<double> m_location{3};
         qbVector<double> m_intensity{3};
