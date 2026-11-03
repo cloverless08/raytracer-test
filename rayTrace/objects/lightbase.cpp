@@ -22,5 +22,5 @@ bool raytrace::LightBase::ComputeIllumination(const qbVector<double> &intPoint,
     qbVector<double> &color, double &intensity) {
     //======================================================================
 
-
+    return false; // empty bc its a base, define script in each inherited class
 }
