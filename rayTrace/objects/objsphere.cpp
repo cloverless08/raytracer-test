@@ -54,6 +54,8 @@ bool raytrace::ObjSphere::TestIntersection(
             } else {
                 intPoint = castRay.m_point1 + (vhat * t2);
             }
+
+            return true;
         }
     } else {
         // we have not intersection
