@@ -33,7 +33,7 @@ bool raytrace::ObjSphere::TestIntersection(
     // since its unit value, the value of a will always be 1
 
     double b = 2.0 * qbVector<double>::dot(castRay.m_point1, vhat);
-    double c = qbVector<double>::dot(castRay.m_point1, castRay.m_point1); // start point of ray to itself
+    double c = qbVector<double>::dot(castRay.m_point1, castRay.m_point1) - 1.0; // start point of ray to itself
 
     // test for intersection
     double intTest = (b*b) - 4.0 * c; // remember a = 1

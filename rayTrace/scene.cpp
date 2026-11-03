@@ -18,7 +18,7 @@ Raytrace::Scene::Scene() {
     m_camera.SetUp(qbVector<double>{std::vector<double>{0.0, 0.0, 1.0}});
 
     m_camera.SetHorizontalSize(0.25);
-    m_camera.SetAspectRatio(16.0 / 9.0);
+    m_camera.SetAspectRatio(4.0 / 3.0);
 
     m_camera.UpdateCamera();
 }
