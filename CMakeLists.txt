@@ -25,6 +25,7 @@ add_executable(raytracer_test
         rayTrace/objects/object_base.cpp
         rayTrace/objects/objsphere.h
         rayTrace/objects/objsphere.cpp
+        rayTrace/objects/lightbase.h
 )
 
 target_link_libraries(raytracer_test PRIVATE SDL2::SDL2 SDL2::SDL2main)
