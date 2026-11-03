@@ -21,6 +21,10 @@ Raytrace::Scene::Scene() {
     m_camera.SetAspectRatio(4.0 / 3.0);
 
     m_camera.UpdateCamera();
+
+
+    // construct test sphere
+    m_objectList.push_back(std::make_shared<raytrace::ObjSphere>(raytrace::ObjSphere()));
 }
 
 // render func
@@ -58,28 +62,34 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
             // generate a ray for this pixel
             m_camera.GenerateRay(normX, normY, camRay);
 
-            // test for valid intersection and modify screen
-            bool validIntersection = m_testSphere.TestIntersection(camRay, intersectionPoint, localNorm, localColor);
 
-            if (validIntersection) {
-                // compute distance between camera and int
-                double dist = (intersectionPoint - camRay.m_point1).norm();
-                if (dist > maxDistance) { // check mainly for debugging
-                    maxDistance = dist;
+            // test for intersections with all objects in scene
+            for (auto currentObject : m_objectList) { // loop through all objects in object list and return reference to that in currentObject
+                bool validIntersection = currentObject -> TestIntersection(camRay, intersectionPoint, localNorm, localColor);
+                
+                if (validIntersection) {
+                    // compute distance between camera and int
+                    double dist = (intersectionPoint - camRay.m_point1).norm();
+                    if (dist > maxDistance) { // check mainly for debugging
+                        maxDistance = dist;
+                    }
+
+                    if (dist < minDistance) { // check mainly for debugging
+                        minDistance = dist;
+                    }
+
+                    outputImage.SetPixel(x, y, 255.0 - ((dist - 9.0) / 0.94605) * 255.0, 0.0, 0.0);
+                    std::cout << "true" << std::endl;
+                } else {
+                    outputImage.SetPixel(x, y, 0.0, 0.0, 0.0);
+                    std::cout << "false" << std::endl;
                 }
 
-                if (dist < minDistance) { // check mainly for debugging
-                    minDistance = dist;
-                }
-
-                outputImage.SetPixel(x, y, 255.0 - ((dist - 9.0) / 0.94605) * 255.0, 0.0, 0.0);
-                std::cout << "true" << std::endl;
-            } else {
-                outputImage.SetPixel(x, y, 0.0, 0.0, 0.0);
-                std::cout << "false" << std::endl;
+                std::cout << "done" << std::endl;
             }
 
-            std::cout << "done" << std::endl;
+            // test for valid intersection and modify screen
+            //bool validIntersection = m_testSphere.TestIntersection(camRay, intersectionPoint, localNorm, localColor);
         }
     }
 

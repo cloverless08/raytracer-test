@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <SDL2/SDL.h>
+#include <memory>
 
 #include "image.h"
 #include "camera.h"
@@ -26,6 +27,9 @@ namespace Raytrace {
 
     private:
         raytrace::Camera m_camera;
+
+        // list of objects in scene
+        std::vector<std::shared_ptr<raytrace::ObjectBase>> m_objectList;
 
         // unit sphere on origin for testing
         raytrace::ObjSphere m_testSphere;
