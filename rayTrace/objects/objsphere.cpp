@@ -40,7 +40,21 @@ bool raytrace::ObjSphere::TestIntersection(
 
     if (intTest > 0.0) {
         // we have intersection
-        return true;
+        double numRoot = sqrtf(intTest);
+        double t1 = (-b + numRoot) / 2.0;
+        double t2 = (-b - numRoot) / 2.0;
+
+        // if either t1 or t2 is negatice, this part of objcet is behind the camera
+        if ((t1 < 0.0) || (t2 < 0.0)) {
+            return false;
+        } else {
+            // determine which point of intersection was closest to camera (bc intersects at two point on either side of sphere)
+            if (t1 < t2) {
+                intPoint = castRay.m_point1 + (vhat * t1);
+            } else {
+                intPoint = castRay.m_point1 + (vhat * t2);
+            }
+        }
     } else {
         // we have not intersection
         return false;
