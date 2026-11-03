@@ -66,7 +66,7 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
             // test for intersections with all objects in scene
             for (auto currentObject : m_objectList) { // loop through all objects in object list and return reference to that in currentObject
                 bool validIntersection = currentObject -> TestIntersection(camRay, intersectionPoint, localNorm, localColor);
-                
+
                 if (validIntersection) {
                     // compute distance between camera and int
                     double dist = (intersectionPoint - camRay.m_point1).norm();
@@ -87,9 +87,6 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
 
                 std::cout << "done" << std::endl;
             }
-
-            // test for valid intersection and modify screen
-            //bool validIntersection = m_testSphere.TestIntersection(camRay, intersectionPoint, localNorm, localColor);
         }
     }
 
