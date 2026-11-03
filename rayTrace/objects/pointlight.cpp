@@ -25,6 +25,26 @@ bool raytrace::PointLight::ComputeIllumination(const qbVector<double> &intPoint,
     qbVector<double> &color, double &intensity) {
     // ===========================================================
 
+    // construct a vector pointing from intersection point to the light
+    qbVector<double> lightDirection = (m_location - intPoint).Normalized(); // "unit vector in that direction"
 
+    // compute a starting point
+    qbVector<double> startPoint = intPoint; // replace later
+
+    // compute angle between local normal and the light ray
+    // Note: we assume local normal is a *unit vector* (magnitude of 1)
+    double angle = acos(qbVector<double>::dot(localNorm, lightDirection));;
+
+    // if normal is pointing away from the light, no illumination
+    if (angle > 1.5708) { // pi/2 ~= 1.5708
+        // no illumination
+        color = m_color;
+        intensity  0.0;
+        return false;
+    } else {
+        color = m_color;
+        intensity = m_intensity * (1.0 - (angle / 1.5708)); // pi/2 ~= 1.5708
+        return true;
+    }
 
 }
