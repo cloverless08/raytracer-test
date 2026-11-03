@@ -42,7 +42,7 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
     double yFactor = 1.0 / (static_cast<double>(sizeY) / 2.0);
 
     double minDistance = 1e6;
-    double maxDinstance = 0.0;
+    double maxDistance = 0.0;
 
     // actually raytrace it all
     for (int x = 0; x < sizeX; ++x) {
@@ -62,7 +62,17 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
             bool validIntersection = m_testSphere.TestIntersection(camRay, intersectionPoint, localNorm, localColor);
 
             if (validIntersection) {
-                outputImage.SetPixel(x, y, 255.0, 0.0, 0.0);
+                // compute distance between camera and int
+                double dist = (intersectionPoint - camRay.m_point1).norm();
+                if (dist > maxDistance) { // check mainly for debugging
+                    maxDistance = dist;
+                }
+
+                if (dist < minDistance) { // check mainly for debugging
+                    minDistance = dist;
+                }
+
+                outputImage.SetPixel(x, y, 255.0 - ((dist - 9.0) / 0.94605) * 255.0, 0.0, 0.0);
                 std::cout << "true" << std::endl;
             } else {
                 outputImage.SetPixel(x, y, 0.0, 0.0, 0.0);
@@ -73,5 +83,7 @@ bool Raytrace::Scene::Render(raytrace::Image &outputImage) {
         }
     }
 
+    std::cout << "Minimum Distance: " << minDistance << std::endl;
+    std::cout << "Maximum Distance: " << maxDistance << std::endl;
     return true;
 }
